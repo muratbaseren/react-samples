@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MY SHOP APP NODE APP</title>
+</head>
+
+<body>
+    <h1>Node APP</h1>
+    <hr />
+    <div>
+        <form action="/create"
+            method="POST">
+            <input type="text"
+                placeholder="john"
+                name="name">
+            <input type="text"
+                placeholder="doe"
+                name="surname">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div>
+        <ul class="users">
+            <% for(var i = 0; i < users.length; i++) { %>
+                <li class="user">
+                    <span><%= users[i].name %></span>&nbsp;
+                    <span><%= users[i].surname %></span>&nbsp;
+                    <button onclick="update('<%= users[i]._id %>')">Update User</button>&nbsp;
+                    <button onclick="remove('<%= users[i]._id %>')">Delete User</button>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <script src="/main.js"></script>
+</body>
+
+</html>
